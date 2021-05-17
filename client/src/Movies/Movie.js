@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function Movie(props) {
-  const [movie, setMovie] = useState();
-
-  let id = 1;
+  const [movie, setMovie] = useState()
+ console.log(movie)
+ console.log(setMovie)
+  const { movieID } = useParams()
+  const movie = movie.find(movie => movie.id == movieID)
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
   useEffect(() => {
